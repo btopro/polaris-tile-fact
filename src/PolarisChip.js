@@ -11,29 +11,16 @@ export class PolarisChip extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
-       
-      }
-
-      .tile{
-      display: flex;
+        display: flex;
       height: 360px;
       width: 419.8px;
       font-family: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', sans-serif;
       font-size: 40px;
       margin: 0 0 16px 0;
       padding: 0 60px;
-    }
+      }
 
-    .title {
-      margin: 0 0 16px 0;
-      padding: 0 60px;
-      height: 299.80px;
-      width: 92px;
-      font-family: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', sans-serif;
-      font-size: 40px;
-      color: black;
-    }
+     
 
       .white-on-navy{
         background-color: rgb(30, 64, 124);
@@ -64,17 +51,20 @@ export class PolarisChip extends LitElement {
 
   constructor() {
     super();
+    this.title = "88k students"
 
   }
 
   render() {
-    return html`
+//If multine==true{return code with extra HTML lines for white box}
+//Else return what you already have
+  return html`
       <div class="tile ${this.tile}">
         <div class="title">
-          <slot name="title"></slot>
+          ${this.title}
         </div>
-        <slot></slot>
       </div>
     `;
   }
 }
+

@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit';
 export class PolarisChip extends LitElement {
   static get properties() {
     return {
-      title: { type: String },
+      name: { type: String },
       tile: {type: String}
     };
   }
@@ -11,16 +11,18 @@ export class PolarisChip extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: flex;
-      height: 360px;
-      width: 419.8px;
-      font-family: 'Roboto', 'Franklin Gothic Medium', 'Tahoma', sans-serif;
-      font-size: 40px;
-      margin: 0 0 16px 0;
-      padding: 0 60px;
+      display: inline-block;
+      
       }
 
+     .tile{
+      display: inline-block;
+      height: 280.8px;
+      width: 336px;
+      font-family:Roboto, 'Franklin Gothic Medium', Tahoma, sans-serif;
+      font-size: 32px;
      
+     }
 
       .white-on-navy{
         background-color: rgb(30, 64, 124);
@@ -37,10 +39,7 @@ export class PolarisChip extends LitElement {
       }
       .white-on-picture{
         background-color: red;
-        font-family: 'Arial', sans-serif; 
-        color: green;
-        height: 299.80px;
-        width: 92px;
+        
       }
       navy-on-white{
         background-color: brown;
@@ -51,7 +50,7 @@ export class PolarisChip extends LitElement {
 
   constructor() {
     super();
-    this.title = "88k students"
+    this.name = "default"
 
   }
 
@@ -60,10 +59,10 @@ export class PolarisChip extends LitElement {
 //Else return what you already have
   return html`
       <div class="tile ${this.tile}">
-        <div class="title">
-          ${this.title}
+        <div class="name">
+          ${this.name}
         </div>
-      </div>
+  </div>
     `;
   }
 }

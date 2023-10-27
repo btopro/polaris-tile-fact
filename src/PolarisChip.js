@@ -7,7 +7,8 @@ export class PolarisChip extends LitElement {
       tile: {type: String},
       backgroundImage: {type: String},
       link: {type: String},
-      clickable:{type: Boolean}
+      clickable:{type: Boolean},
+      additionalText: {type: Boolean}
     };
   }
 
@@ -33,7 +34,7 @@ export class PolarisChip extends LitElement {
       box-shadow: rgba(0, 3, 33, 0.1) 0px 8px 16px 0px;
       
      }
-
+     
 
      .name{
       margin: 0 0 16px 0;
@@ -98,7 +99,6 @@ export class PolarisChip extends LitElement {
         <div class="name">
           ${this.name}
         </div>
-      
   </div>
   <style>
       .tile.white-on-picture {

@@ -8,7 +8,8 @@ export class PolarisChip extends LitElement {
       backgroundImage: {type: String},
       link: {type: String},
       clickable:{type: Boolean},
-      additionalText: {type: Boolean}
+      multiline:{type: Boolean, reflect: true},
+      additionalText: {type: String}
     };
   }
 
@@ -34,12 +35,21 @@ export class PolarisChip extends LitElement {
       box-shadow: rgba(0, 3, 33, 0.1) 0px 8px 16px 0px;
       
      }
-     
+
+     .additionalText{
+      font-family:Tahoma;
+      display: block;
+      color: rgb(0, 30, 68);
+      font-size: 20px;
+      font-weight: normal;
+    
+     }
 
      .name{
       margin: 0 0 16px 0;
       border: 0;
       padding: 0 47px;
+  
       
      }
 
@@ -76,6 +86,8 @@ export class PolarisChip extends LitElement {
     this.backgroundImage = '';
     this.link = '';
     this.clickable = false;
+    this.additionalText = "default";
+    this.multiline = false;
   }
 
   connectedCallback() {
@@ -94,18 +106,35 @@ export class PolarisChip extends LitElement {
   render() {
 //If multine==true{return code with extra HTML lines for white box}
 //Else return what you already have
+if(this.multiline){
   return html`
-      <div class="tile ${this.tile} ${this.clickable ? 'clickable' : ''}">
+   <div class="tile ${this.tile}">
         <div class="name">
           ${this.name}
         </div>
-  </div>
-  <style>
-      .tile.white-on-picture {
-        background-image: url(${this.backgroundImage});
-      }
-    </style>
+        <hr /> 
+        <div class="additionalText">
+          ${this.additionalText}
+        </div>
+      </div>
+      
     `;
+}
+
+else{
+  return html`
+  <div class="tile ${this.tile} ${this.clickable ? 'clickable' : ''}">
+    <div class="name">
+      ${this.name}
+    </div>
+</div>
+<style>
+  .tile.white-on-picture {
+    background-image: url(${this.backgroundImage});
+  }
+</style>
+`;
+}
   }
 }
 

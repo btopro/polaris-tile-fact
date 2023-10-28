@@ -9,7 +9,8 @@ export class PolarisChip extends LitElement {
       link: {type: String},
       clickable:{type: Boolean},
       multiline:{type: Boolean, reflect: true},
-      additionalText: {type: String}
+      additionalText: {type: String},
+      splitline: {}
     };
   }
 
@@ -35,21 +36,29 @@ export class PolarisChip extends LitElement {
       box-shadow: rgba(0, 3, 33, 0.1) 0px 8px 16px 0px;
       
      }
+     
+     .split-line {
+      margin: 0 0 16px 0;
+      border: 16px;
+      height: 3px; 
+      background-color: rgb(0, 30, 68); 
+     }
 
      .additionalText{
       font-family:Tahoma;
       display: block;
       color: rgb(0, 30, 68);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: normal;
-    
+      margin: 0 0 58px 0;
+      border: 0;
+      padding: 0 47px;
      }
 
      .name{
       margin: 0 0 16px 0;
       border: 0;
       padding: 0 47px;
-  
       
      }
 
@@ -104,27 +113,27 @@ export class PolarisChip extends LitElement {
 
   }
   render() {
-//If multine==true{return code with extra HTML lines for white box}
-//Else return what you already have
 if(this.multiline){
   return html`
    <div class="tile ${this.tile}">
+   <div class="content">
         <div class="name">
           ${this.name}
         </div>
-        <hr /> 
+        <hr class="split-line" />
         <div class="additionalText">
           ${this.additionalText}
         </div>
       </div>
-      
+      </div>  
     `;
 }
 
 else{
   return html`
   <div class="tile ${this.tile} ${this.clickable ? 'clickable' : ''}">
-    <div class="name">
+   
+  <div class="name">
       ${this.name}
     </div>
 </div>

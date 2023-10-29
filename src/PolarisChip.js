@@ -10,7 +10,7 @@ export class PolarisChip extends LitElement {
       clickable:{type: Boolean},
       multiline:{type: Boolean, reflect: true},
       additionalText: {type: String},
-      splitline: {}
+      buttonbottom: {type: Boolean}
     };
   }
 
@@ -18,6 +18,16 @@ export class PolarisChip extends LitElement {
     return css`
       :host {
       display: inline-block;
+      }
+      :host([buttonbottom]) .button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        background-image: url('https://static.thenounproject.com/png/1820752-200.png');
+        background-size: cover;
+        transition: transform 0.2s;
       }
 
       .tile.clickable:hover {
@@ -34,14 +44,19 @@ export class PolarisChip extends LitElement {
       font-size: 32px;
       color: white;
       box-shadow: rgba(0, 3, 33, 0.1) 0px 8px 16px 0px;
+      position: relative;
       
      }
-     
+     .splitspacer{
+      width:239px;
+      margin: auto;
+     }
      .split-line {
       margin: 0 0 16px 0;
       border: 16px;
       height: 3px; 
       background-color: rgb(0, 30, 68); 
+
      }
 
      .additionalText{
@@ -59,8 +74,14 @@ export class PolarisChip extends LitElement {
       margin: 0 0 16px 0;
       border: 0;
       padding: 0 47px;
+      margin-bottom: 30px; 
       
      }
+    
+
+      .tile.white-on-picture:hover .button {
+        transform: scale(1.5); 
+      }
 
       .white-on-navy{
         background-color: rgb(0, 30, 68); 
@@ -120,7 +141,10 @@ if(this.multiline){
         <div class="name">
           ${this.name}
         </div>
-        <hr class="split-line" />
+        <div class="splitspacer"> 
+          <hr class="split-line" />
+      </div>
+       
         <div class="additionalText">
           ${this.additionalText}
         </div>
@@ -136,6 +160,7 @@ else{
   <div class="name">
       ${this.name}
     </div>
+    <div class="button"></div>
 </div>
 <style>
   .tile.white-on-picture {

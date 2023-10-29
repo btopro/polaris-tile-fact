@@ -21,13 +21,17 @@ export class PolarisChip extends LitElement {
       }
       :host([buttonbottom]) .button {
         position: absolute;
-        bottom: 10px;
-        right: 10px;
+        bottom: 15px;
+        right: 15px;
         width: 24px;
         height: 24px;
-        background-image: url('https://static.thenounproject.com/png/1820752-200.png');
+        background-image: url('https://static-00.iconduck.com/assets.00/external-link-icon-2048x2048-wo7lfgrz.png');
         background-size: cover;
         transition: transform 0.2s;
+      }
+
+      .tile.white-on-picture:hover .button {
+        transform: scale(1.3); 
       }
 
       .tile.clickable:hover {
@@ -48,7 +52,7 @@ export class PolarisChip extends LitElement {
       
      }
      .splitspacer{
-      width:239px;
+      width:242px;
       margin: auto;
      }
      .split-line {
@@ -65,7 +69,7 @@ export class PolarisChip extends LitElement {
       color: rgb(0, 30, 68);
       font-size: 18px;
       font-weight: normal;
-      margin: 0 0 58px 0;
+      margin: 0 0 20px 0;
       border: 0;
       padding: 0 47px;
      }
@@ -74,14 +78,10 @@ export class PolarisChip extends LitElement {
       margin: 0 0 16px 0;
       border: 0;
       padding: 0 47px;
-      margin-bottom: 30px; 
+      margin-bottom: 18px; 
       
      }
     
-
-      .tile.white-on-picture:hover .button {
-        transform: scale(1.5); 
-      }
 
       .white-on-navy{
         background-color: rgb(0, 30, 68); 

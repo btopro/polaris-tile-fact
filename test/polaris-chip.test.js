@@ -1,12 +1,12 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/polaris-chip.js';
+import '../src/polaris-tile-fact.js';
 
-describe('PolarisChip', () => {
+describe('PolarisTileFact', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`<polaris-chip></polaris-chip>`);
+    element = await fixture(html`<polaris-tile-fact></polaris-tile-fact>`);
   });
 
   it('renders a h1', () => {

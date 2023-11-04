@@ -1,9 +1,9 @@
 import { html } from 'lit';
-import '../src/polaris-chip.js';
+import '../src/polaris-tile-fact.js';
 
 export default {
-  title: 'PolarisChip',
-  component: 'polaris-chip',
+  title: 'PolarisTileFact',
+  component: 'polaris-tile-fact',
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -11,11 +11,11 @@ export default {
 
 function Template({ title, backgroundColor }) {
   return html`
-    <polaris-chip
-      style="--polaris-chip-background-color: ${backgroundColor || 'white'}"
+    <polaris-tile-fact
+      style="--polaris-tile-fact-background-color: ${backgroundColor || 'white'}"
       .title=${title}
     >
-    </polaris-chip>
+    </polaris-tile-fact>
   `;
 }
 

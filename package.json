@@ -1,8 +1,8 @@
 {
-  "name": "polaris-chip",
-  "description": "Webcomponent polaris-chip following open-wc recommendations",
+  "name": "polaris-tile-fact",
+  "description": "Webcomponent polaris-tile-fact following open-wc recommendations",
   "license": "MIT",
-  "author": "polaris-chip",
+  "author": "polaris-tile-fact",
   "version": "0.0.0",
   "scripts": {
     "test": "web-test-runner --coverage",
